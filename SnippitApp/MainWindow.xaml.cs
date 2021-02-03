@@ -73,7 +73,9 @@ namespace SnippitApp
 
         private void MenuItemNew_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("New");
+            AddNewSnippit newWindow = new AddNewSnippit();
+            newWindow.Owner = this;
+            newWindow.Show();
         }
     }
 }

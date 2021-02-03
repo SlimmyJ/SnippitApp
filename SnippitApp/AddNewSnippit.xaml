@@ -26,23 +26,20 @@
         <Label x:Name="lblInstructions"
                Content="Please enter the following Snippit information:"
                Grid.ColumnSpan="2"
-               HorizontalAlignment="Center"
-               VerticalAlignment="Center"></Label>
+               HorizontalAlignment="Center" VerticalAlignment="Center"
+               FontSize="16"></Label>
         <Label x:Name="lblName"
                Grid.Row="1"
                Content="Name:"
-               HorizontalAlignment="Center"
-               VerticalAlignment="Center"></Label>
+               HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
         <Label x:Name="lblSummary"
                Grid.Row="2"
                Content="Summary:"
-               HorizontalAlignment="Center"
-               VerticalAlignment="Center"></Label>
+               HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
         <Label x:Name="lblContent"
                Grid.Row="3"
                Content="Content:"
-               HorizontalAlignment="Center"
-               VerticalAlignment="Center"></Label>
+               HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
         
         <TextBox x:Name="txtName"
                  Grid.Column="1"
@@ -57,7 +54,7 @@
                  Padding="5" Margin ="5, 0, 10, 0" FontStyle="Italic" Opacity="0.5"
                  VerticalAlignment="Center"/>
         <TextBox x:Name="txtContent"
-                 Grid.RowSpan="4"
+                 Grid.RowSpan="5"
                  Grid.Column="1"
                  Grid.Row="3"               
                  Text="Please enter your Snippit here"
@@ -68,12 +65,14 @@
                 Grid.Column="0"
                 Grid.Row="8"
                 Content="Cancel"
-                Background="LightSalmon"></Button>
+                Background="LightSalmon"
+                Click="btnCancel_Click"></Button>
         <Button x:Name="btnSave"
                 Grid.Column="1"
                 Grid.Row="8"
                 Content="Save"
-                Background="MediumSeaGreen"></Button>
+                Background="MediumSeaGreen"
+                Click="btnSave_Click"></Button>
         
 
 
