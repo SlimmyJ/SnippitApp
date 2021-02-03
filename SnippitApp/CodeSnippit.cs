@@ -28,7 +28,7 @@ namespace SnippitApp
         {
         }
 
-        public CodeSnippit(string name, string author, string summary, string content)
+        public CodeSnippit(string name, string summary, string content, string author = "unknown")
         {
             id++;
             SnipID =  id;

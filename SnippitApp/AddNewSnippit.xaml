@@ -44,21 +44,21 @@
         <TextBox x:Name="txtName"
                  Grid.Column="1"
                  Grid.Row="1"               
-                 Text="Please enter the name of the Snippit"
+                 
                  Padding="5" Margin ="5, 0, 10, 0" FontStyle="Italic" Opacity="0.5"
                  VerticalAlignment="Center"/>
         <TextBox x:Name="txtSummary"
                  Grid.Column="1"
                  Grid.Row="2"               
-                 Text="Please enter a summary of the Snippit"
+                 
                  Padding="5" Margin ="5, 0, 10, 0" FontStyle="Italic" Opacity="0.5"
                  VerticalAlignment="Center"/>
         <TextBox x:Name="txtContent"
                  Grid.RowSpan="5"
                  Grid.Column="1"
                  Grid.Row="3"               
-                 Text="Please enter your Snippit here"
-                 Padding="5" Margin ="5, 0, 10, 10" FontStyle="Italic" Opacity="0.5"
+                 
+                 Padding="5,15,5,5" Margin ="5, 0, 10, 10" FontStyle="Italic" Opacity="0.5"
                  />
 
         <Button x:Name="btnCancel"
