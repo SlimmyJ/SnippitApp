@@ -1,18 +1,6 @@
-﻿using System;
-using System.IO;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace SnippitApp
 {
@@ -36,7 +24,7 @@ namespace SnippitApp
         {
             foreach (var item in SnippitList)
             {
-                ListBoxOverView.Items.Add(item.ToString());
+                ListBoxOverView.Items.Add(item);
             }
         }
 
@@ -49,7 +37,9 @@ namespace SnippitApp
 
         private void ListBoxOverView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            string curItem = ListBoxOverView.SelectedItem.ToString();
+            CodeSnippit icaughtthis = (CodeSnippit)ListBoxOverView.SelectedItem;
+
+            MainSnipWindow.Text = icaughtthis.SnipContent;
         }
 
         private List<CodeSnippit> FillListWithSnippits()

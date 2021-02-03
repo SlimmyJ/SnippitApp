@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace SnippitApp
 {
@@ -23,6 +21,10 @@ namespace SnippitApp
         public int SnipLength { get; set; }
 
         public int MyProperty { get; set; }
+
+        public CodeSnippit()
+        {
+        }
 
         public CodeSnippit(string name, string author, string summary, string content)
         {
