@@ -30,6 +30,9 @@ namespace SnippitApp
 
         private void ListBoxOverView_SelectionChanged(object sender, SelectionChangedEventArgs e) //display text
         {
+            var index = ListBoxOverView.SelectedIndex +1 ;
+
+            MainSnipWindow.Text = GetSnippitCONTENTOnId(index);
         }
 
         private List<CodeSnippit> FillListWithSnippits()
@@ -52,6 +55,20 @@ namespace SnippitApp
             fuckingdoit.ToJson(snippitlistrepo);
 
             return snippitlistrepo;
+        }
+
+        private string GetSnippitCONTENTOnId(int id)
+        {
+            string snippit = "";
+            foreach (var item in SnippitList)
+            {
+                if (item.SnipID == id)
+                {
+                    snippit = item.SnipContent;
+                    break;
+                }                
+            }
+            return snippit;
         }
     }
 }

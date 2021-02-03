@@ -4,15 +4,17 @@ namespace SnippitApp
 {
     public class CodeSnippit
     {
-        private int _uID { get; set; }
+        private static int id = 0;
+
+        private int myId = 0;
         public string SnipName { get; set; }
         public string SnipSummary { get; set; }
         public string SnipContent { get; set; }
 
-        public int ID
+        public int SnipID
         {
-            get { return _uID; }
-            set { _uID = value; }
+            get { return myId; }
+            set { myId = value; }
         }
 
         public List<Tags> SnipTags { get; set; }
@@ -28,10 +30,13 @@ namespace SnippitApp
 
         public CodeSnippit(string name, string author, string summary, string content)
         {
+            id++;
+            SnipID =  id;
             SnipName = name;
             SnipAuthor = author;
             SnipSummary = summary;
             SnipContent = content;
+           
         }
 
         public override string ToString()
