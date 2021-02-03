@@ -21,8 +21,8 @@ namespace SnippitApp
 
         public CodeSnippit GetSnippit(int id)
         {
-            List<CodeSnippit> allSnippits = GetSnippits();
-            var selectedSnippit = allSnippits.Where(x => x.SnipID == id).FirstOrDefault();
+            //List<CodeSnippit> allSnippits = GetSnippits();
+            var selectedSnippit = _snippitListRepo.Where(x => x.SnipID == id).FirstOrDefault();
 
             return selectedSnippit;
         }

@@ -32,12 +32,14 @@ namespace SnippitApp
         }
 
         private void ListBoxOverView_SelectionChanged(object sender, SelectionChangedEventArgs e) //display text
-        {
-            var index = ListBoxOverView.SelectedIndex +1 ;
-
-            MainSnipWindow.Text = _repo.GetSnippit(index).SnipContent;
-
-            //MainSnipWindow.Text = GetSnippitCONTENTOnId(index);
+        {   
+            displaySnippit = _repo.GetSnippit(ListBoxOverView.SelectedIndex + 1);
+            
+            if(displaySnippit != null)
+            {
+                MainSnipWindow.Text = displaySnippit.SnipContent;
+            }
+            
         }
 
         //private List<CodeSnippit> FillListWithSnippits()
@@ -89,6 +91,7 @@ namespace SnippitApp
             ListBoxOverView.Items.Clear();
             FillListBoxItems();
         }
+        
 
 
     }
