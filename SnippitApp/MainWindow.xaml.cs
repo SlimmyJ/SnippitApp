@@ -70,5 +70,10 @@ namespace SnippitApp
             }
             return snippit;
         }
+
+        private void MenuItemNew_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("New");
+        }
     }
 }

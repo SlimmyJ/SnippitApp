@@ -1,0 +1,83 @@
+﻿<Window x:Class="SnippitApp.AddNewSnippit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SnippitApp"
+        mc:Ignorable="d"
+        Title="AddNewSnippit" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="4*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Label x:Name="lblInstructions"
+               Content="Please enter the following Snippit information:"
+               Grid.ColumnSpan="2"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"></Label>
+        <Label x:Name="lblName"
+               Grid.Row="1"
+               Content="Name:"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"></Label>
+        <Label x:Name="lblSummary"
+               Grid.Row="2"
+               Content="Summary:"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"></Label>
+        <Label x:Name="lblContent"
+               Grid.Row="3"
+               Content="Content:"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"></Label>
+        
+        <TextBox x:Name="txtName"
+                 Grid.Column="1"
+                 Grid.Row="1"               
+                 Text="Please enter the name of the Snippit"
+                 Padding="5" FontStyle="Italic" Opacity="0.5"
+                 VerticalAlignment="Center"/>
+        <TextBox x:Name="txtSummary"
+                 Grid.Column="1"
+                 Grid.Row="2"               
+                 Text="Please enter a summary of the Snippit"
+                 Padding="5" FontStyle="Italic" Opacity="0.5"
+                 VerticalAlignment="Center"/>
+        <TextBox x:Name="txtContent"
+                 Grid.RowSpan="4"
+                 Grid.Column="1"
+                 Grid.Row="3"               
+                 Text="Please enter your Snippit here"
+                 Padding="5,10,5,10" FontStyle="Italic" Opacity="0.5"
+                 />
+
+        <Button x:Name="btnCancel"
+                Grid.Column="0"
+                Grid.Row="8"
+                Content="Cancel"
+                Background="LightSalmon"></Button>
+        <Button x:Name="btnSave"
+                Grid.Column="1"
+                Grid.Row="8"
+                Content="Save"
+                Background="MediumSeaGreen"></Button>
+        
+
+
+
+
+    </Grid>
+</Window>

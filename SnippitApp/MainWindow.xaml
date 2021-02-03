@@ -21,6 +21,8 @@
             <ColumnDefinition Width="1*"></ColumnDefinition>
             <ColumnDefinition Width="2.5*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
+        
+        
 
         <Border Grid.Row="3"
                 Grid.ColumnSpan="2"
@@ -36,10 +38,11 @@
                    Grid.Row="0">
 
             <Menu DockPanel.Dock="Top">
-                <MenuItem Header="_File">
-                    <MenuItem Header="_New" />
-                    <MenuItem Header="_Open" />
-                    <MenuItem Header="_Save" />
+                <MenuItem Header="_Snippit">
+                    <MenuItem Header="_New"
+                              Click="MenuItemNew_Click"/>
+                    <MenuItem Header="_Edit" />
+                    <MenuItem Header="_Delete" />
                     <Separator />
                     <MenuItem Header="_Exit" />
                 </MenuItem>
