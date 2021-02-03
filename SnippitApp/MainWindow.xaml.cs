@@ -22,24 +22,14 @@ namespace SnippitApp
 
         public void FillListBoxItems()
         {
-            foreach (var item in SnippitList)
+            foreach (CodeSnippit item in SnippitList)
             {
-                ListBoxOverView.Items.Add(item);
+                ListBoxOverView.Items.Add(item.ToString());
             }
         }
 
-        private void ListBoxOverView_Selected(object sender, RoutedEventArgs e)
+        private void ListBoxOverView_SelectionChanged(object sender, SelectionChangedEventArgs e) //display text
         {
-            //string curItem = ListBoxOverView.SelectedItem.ToString();
-
-            //btnTest.Content = curItem;
-        }
-
-        private void ListBoxOverView_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            CodeSnippit icaughtthis = (CodeSnippit)ListBoxOverView.SelectedItem;
-
-            MainSnipWindow.Text = icaughtthis.SnipContent;
         }
 
         private List<CodeSnippit> FillListWithSnippits()

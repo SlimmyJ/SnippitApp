@@ -58,7 +58,6 @@
         <ListBox Grid.Row="2"
                  x:Name="ListBoxOverView"
                  Padding="10"
-                 ListBoxItem.Selected="ListBoxOverView_Selected"
                  SelectionChanged="ListBoxOverView_SelectionChanged"
                  SelectionMode="Single"
                  IsSynchronizedWithCurrentItem="True">
