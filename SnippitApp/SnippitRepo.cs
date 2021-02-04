@@ -18,14 +18,22 @@ namespace SnippitApp
             }
             return _repo;
         }
+        
+        //GET op basis van ID
+        //public CodeSnippit GetSnippit(int id)
+        //{
+        //    //List<CodeSnippit> allSnippits = GetSnippits();
+        //    var selectedSnippit = _snippitListRepo.Where(x => x.SnipID == id).FirstOrDefault();            
 
-        public CodeSnippit GetSnippit(int id)
+        //    return selectedSnippit;
+        //}
+
+        //GET op basis van index
+        public CodeSnippit GetSnippit(int index)
         {
-            //List<CodeSnippit> allSnippits = GetSnippits();
-            var selectedSnippit = _snippitListRepo.Where(x => x.SnipID == id).FirstOrDefault();
-            
-
-            return selectedSnippit;
+            CodeSnippit[] allSnippits = GetSnippits().ToArray();
+             
+            return allSnippits[index];
         }
 
         public List<CodeSnippit> GetSnippits()

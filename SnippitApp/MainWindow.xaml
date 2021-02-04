@@ -71,11 +71,11 @@
             </ListBox.ContextMenu>
         </ListBox>
 
-        <TextBox x:Name="MainSnipWindow"
+        <TextBlock x:Name="MainSnipWindow"
                  Text=""
                  Padding="25"
                  Grid.Row="2"
                  Grid.Column="2"
-                 Background="GhostWhite"></TextBox>
+                 Background="GhostWhite"></TextBlock>
     </Grid>
 </Window>

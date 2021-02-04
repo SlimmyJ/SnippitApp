@@ -30,14 +30,18 @@ namespace SnippitApp
             }
         }
 
-        private void ListBoxOverView_SelectionChanged(object sender, SelectionChangedEventArgs e) //display text
-        {   
-            displaySnippit = _repo.GetSnippit(ListBoxOverView.SelectedIndex + 1);
-            
-            if(displaySnippit != null)
+        //display text
+        private void ListBoxOverView_SelectionChanged(object sender, SelectionChangedEventArgs e) 
+        {
+            if(ListBoxOverView.SelectedIndex != -1)
             {
-                MainSnipWindow.Text = displaySnippit.SnipContent;
-            }
+                displaySnippit = _repo.GetSnippit(ListBoxOverView.SelectedIndex);
+
+                if (displaySnippit != null)
+                {
+                    MainSnipWindow.Text = displaySnippit.SnipContent;
+                }
+            }           
             
         }        
 
@@ -53,9 +57,10 @@ namespace SnippitApp
         {
             if (displaySnippit != null)
             {
-                _repo.RemoveSnippitFromRepo(displaySnippit);
+                //_repo.RemoveSnippitFromRepo(displaySnippit);
+                _repo.RemoveSnippitFromRepo(ListBoxOverView.SelectedIndex);
                 UpdateListBox();
-                MainSnipWindow.Clear();
+                //MainSnipWindow.ClearValue();
             }
         }
 

@@ -56,7 +56,9 @@
         <TextBox x:Name="txtContent"
                  Grid.RowSpan="5"
                  Grid.Column="1"
-                 Grid.Row="3"               
+                 Grid.Row="3"
+                 TextWrapping="Wrap"
+                 AcceptsReturn="True"
                  
                  Padding="5,15,5,5" Margin ="5, 0, 10, 10" FontStyle="Italic" Opacity="0.5"
                  />
