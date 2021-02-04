@@ -23,6 +23,7 @@ namespace SnippitApp
         {
             //List<CodeSnippit> allSnippits = GetSnippits();
             var selectedSnippit = _snippitListRepo.Where(x => x.SnipID == id).FirstOrDefault();
+            
 
             return selectedSnippit;
         }
@@ -45,6 +46,10 @@ namespace SnippitApp
         public void RemoveSnippitFromRepo(CodeSnippit snippit)
         {
             _snippitListRepo.Remove(snippit);
+        }
+        public void RemoveSnippitFromRepo(int index)
+        {
+            _snippitListRepo.RemoveAt(index);
         }
 
         private List<CodeSnippit> GenerateExampleSnippits()

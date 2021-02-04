@@ -49,11 +49,27 @@ namespace SnippitApp
             newWindow.Show();
         }
 
+        private void MenuItemDelete_Click(object sender, RoutedEventArgs e)
+        {
+            if (displaySnippit != null)
+            {
+                _repo.RemoveSnippitFromRepo(displaySnippit);
+                UpdateListBox();
+                MainSnipWindow.Clear();
+            }
+        }
+
         private void UpdateListBox(object sender, EventArgs e)
         {
             ListBoxOverView.Items.Clear();
             FillListBoxItems();
-        }     
+        }
+        //non event versie (reverse overload?) om in deze klasse te kunnen gebruiken
+        private void UpdateListBox()
+        {
+            ListBoxOverView.Items.Clear();
+            FillListBoxItems();
+        }
 
 
     }

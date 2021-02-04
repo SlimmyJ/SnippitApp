@@ -64,6 +64,11 @@
                  SelectionChanged="ListBoxOverView_SelectionChanged"
                  SelectionMode="Single"
                  IsSynchronizedWithCurrentItem="True">
+            <ListBox.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Delete" Click="MenuItemDelete_Click"/>
+                </ContextMenu>
+            </ListBox.ContextMenu>
         </ListBox>
 
         <TextBox x:Name="MainSnipWindow"
