@@ -52,10 +52,6 @@ namespace SnippitApp
             newWindow.Show();
         }
 
-        private void MenuItemAuthorNew_Click(object sender, RoutedEventArgs e)
-        {
-        }
-
         private void MenuItemDelete_Click(object sender, RoutedEventArgs e)
         {
             if (displaySnippit != null)

@@ -43,9 +43,6 @@
                     <MenuItem Header="_Exit" />
                 </MenuItem>
                 <MenuItem Header="Authors">
-                    <MenuItem Click="MenuItemAuthorNew_Click"
-                              Header="_New" />
-                    <MenuItem Header="_Edit" />
                     <Separator />
                     <MenuItem Header="View List" />
                 </MenuItem>
