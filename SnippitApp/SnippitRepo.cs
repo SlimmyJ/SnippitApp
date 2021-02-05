@@ -1,12 +1,16 @@
 ﻿using System.Collections.Generic;
 
+using System.IO;
+using System.Text.Json;
+
 namespace SnippitApp
 {
-    internal class SnippitRepo
+    public class SnippitRepo
     {
         private static List<CodeSnippit> _snippitListRepo;
         private static SnippitRepo _repo;
-        private JsonReader _jasonBro;
+        public JsonReader jasonbro;
+        public JsonWriter jasonsis;
 
         public static SnippitRepo GetSnippetRepo()
         {
@@ -14,6 +18,7 @@ namespace SnippitApp
             {
                 _repo = new SnippitRepo();
             }
+
             return _repo;
         }
 
@@ -27,22 +32,11 @@ namespace SnippitApp
         //}
 
         //GET op basis van index
-        public CodeSnippit GetSnippit(int index)
-        {
-            CodeSnippit[] allSnippits = GetSnippits().ToArray();
-
-            return allSnippits[index];
-        }
 
         public List<CodeSnippit> GetSnippits()
         {
-            JsonReader jsonbro = new JsonReader();
-
-            if (_snippitListRepo == null)
-            {
-                _snippitListRepo = jsonbro.GetSnippitListFromJson(@"C:\Users\simon\source\repos\SnippitApp\SnippitApp\bin\Debug\netcoreapp3.1\Testlist");
-            }
-
+            jasonbro = new JsonReader();
+            jasonbro.GetSnippitListFromJson();
             return _snippitListRepo;
         }
 

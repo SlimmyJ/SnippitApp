@@ -10,6 +10,8 @@
         mc:Ignorable="d">
     <Window.Resources>
         <local:CodeSnippit x:Key="WindowSnippit" />
+        <local:SnippitRepo x:Key="WindowsRepo" />
+        <local:CodeinSnippit x:Key="WindowsCodeinSnippit" />
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -65,10 +67,7 @@
                 Content="Change please" />
         <ListBox x:Name="ListBoxOverView"
                  Grid.Row="2"
-                 Padding="10"
-                 IsSynchronizedWithCurrentItem="True"
-                 SelectionChanged="ListBoxOverView_SelectionChanged"
-                 SelectionMode="Single">
+                 Padding="10">
             <ListBox.ContextMenu>
                 <ContextMenu>
                     <MenuItem Click="MenuItemDelete_Click"

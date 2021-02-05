@@ -1,12 +1,11 @@
 ﻿using System.Collections.Generic;
+using System.Text.Json;
 
 namespace SnippitApp
 {
     public class CodeSnippit
     {
-        private static int id = 0;
-
-        private int myId = 0;
+        private int _snipId = 0;
         public string SnipName { get; set; }
         public string SnipSummary { get; set; }
         public CodeinSnippit Codestring { get; set; }
@@ -15,8 +14,8 @@ namespace SnippitApp
 
         public int SnipID
         {
-            get { return myId; }
-            set { myId = value; }
+            get { return _snipId; }
+            set { _snipId = value; }
         }
 
         public List<Tag> SnipTags { get; set; }
@@ -32,8 +31,8 @@ namespace SnippitApp
 
         public CodeSnippit(string name, string summary, string content, string author = "unknown")
         {
-            id++;
-            SnipID = id;
+            _snipId++;
+            SnipID = _snipId = 0;
             SnipName = name;
             SnipAuthor = author;
             SnipSummary = summary;

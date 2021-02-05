@@ -10,15 +10,16 @@ namespace SnippitApp
     /// </summary>
     public partial class MainWindow : Window
     {
-        private SnippitRepo _repo;
-        private List<CodeSnippit> SnippitList;
+        public SnippitRepo _repo;
+        public List<CodeSnippit> SnippitList;
         public CodeSnippit displaySnippit;
 
         public MainWindow()
         {
             InitializeComponent();
             _repo = SnippitRepo.GetSnippetRepo();
-            SnippitList = _repo.GetSnippits();
+            JsonReader json = new JsonReader();
+            SnippitList = json.GetSnippitListFromJson();
             FillListBoxItems();
         }
 
@@ -31,18 +32,6 @@ namespace SnippitApp
         }
 
         //display text
-        private void ListBoxOverView_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (ListBoxOverView.SelectedIndex != -1)
-            {
-                displaySnippit = _repo.GetSnippit(ListBoxOverView.SelectedIndex);
-
-                if (displaySnippit != null)
-                {
-                    MainSnipWindow.Text = displaySnippit.SnipContent;
-                }
-            }
-        }
 
         private void MenuItemNew_Click(object sender, RoutedEventArgs e)
         {
@@ -78,13 +67,17 @@ namespace SnippitApp
 
         private void GetFromRepo(object sender, RoutedEventArgs e)
         {
-            JsonReader jsonbro = new JsonReader();
-            SnippitList = jsonbro.GetSnippitListFromJson(@"C:\Users\simon\source\repos\SnippitApp\SnippitApp\bin\Debug\netcoreapp3.1\Testlist");
+            SnippitList = _repo.GetSnippits();
             UpdateListBox();
         }
 
         private void SaveToRepo(object sender, RoutedEventArgs e)
         {
+            JsonWriter jsonbro = new JsonWriter();
+            jsonbro.ToJson(SnippitList);
+            JsonReader jsonbro2 = new JsonReader();
+            SnippitList = jsonbro2.GetSnippitListFromJson();
+            UpdateListBox();
         }
     }
 }

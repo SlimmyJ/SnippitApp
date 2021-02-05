@@ -8,12 +8,12 @@ namespace SnippitApp
     {
         public string _jsonString { get; private set; }
 
-        private string _filePath;
+        private string _filePath = @"C:\Users\simon\source\repos\SnippitApp\SnippitApp\bin\Debug\netcoreapp3.1\Testlist.json";
 
-        public List<CodeSnippit> GetSnippitListFromJson(string fileName)
+        public List<CodeSnippit> GetSnippitListFromJson()
         {
+            _jsonString = File.ReadAllText(_filePath);
             List<CodeSnippit> CodeSnippitList = new List<CodeSnippit>();
-            _jsonString = File.ReadAllText(fileName);
             CodeSnippitList = JsonSerializer.Deserialize<List<CodeSnippit>>(_jsonString);
             return CodeSnippitList;
         }
