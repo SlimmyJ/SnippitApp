@@ -50,7 +50,7 @@
         </DockPanel>
 
         <Button x:Name="btnTest"
-                Content="Change please"
+                Content="Change Style please"
                 Click="btnTest_Click"
                 Grid.Column="1"
                 Grid.Row=" 1"
@@ -77,6 +77,8 @@
                  Text=""
                  Padding="25"
                  Grid.Row="2"
-                 Grid.Column="2"                 />
+                 Grid.Column="2" />
+
+
     </Grid>
 </Window>
