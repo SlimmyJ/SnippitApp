@@ -35,7 +35,7 @@ namespace SnippitApp
 
         private void MenuItemNew_Click(object sender, RoutedEventArgs e)
         {
-            AddNewSnippit newWindow = new AddNewSnippit();
+            AddNewSnippit newWindow = new AddNewSnippit(SnippitList);
             newWindow.Owner = this;
             newWindow.SaveButtonClicked += UpdateListBox;
             newWindow.Show();
@@ -77,6 +77,7 @@ namespace SnippitApp
             jsonbro.ToJson(SnippitList);
             JsonReader jsonbro2 = new JsonReader();
             SnippitList = jsonbro2.GetSnippitListFromJson();
+
             UpdateListBox();
         }
     }
