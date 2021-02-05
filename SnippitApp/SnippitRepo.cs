@@ -8,19 +8,8 @@ namespace SnippitApp
     public class SnippitRepo
     {
         private static List<CodeSnippit> _snippitListRepo;
-        private static SnippitRepo _repo;
         public JsonReader jasonbro;
         public JsonWriter jasonsis;
-
-        public static SnippitRepo GetSnippetRepo()
-        {
-            if (_repo == null)
-            {
-                _repo = new SnippitRepo();
-            }
-
-            return _repo;
-        }
 
         //GET op basis van ID
         //public CodeSnippit GetSnippit(int id)

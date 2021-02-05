@@ -8,7 +8,6 @@ namespace SnippitApp
     /// </summary>
     public partial class AddNewSnippit : Window
     {
-        private SnippitRepo _repo;
         private string newSnipName;
         private string newSnipSummary;
         private string newSnipContent;
@@ -16,7 +15,6 @@ namespace SnippitApp
         public AddNewSnippit()
         {
             InitializeComponent();
-            _repo = SnippitRepo.GetSnippetRepo();
         }
 
         public event EventHandler SaveButtonClicked;

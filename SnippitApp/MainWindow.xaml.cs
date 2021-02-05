@@ -17,7 +17,7 @@ namespace SnippitApp
         public MainWindow()
         {
             InitializeComponent();
-            _repo = SnippitRepo.GetSnippetRepo();
+            _repo = new SnippitRepo();
             JsonReader json = new JsonReader();
             SnippitList = json.GetSnippitListFromJson();
             FillListBoxItems();
