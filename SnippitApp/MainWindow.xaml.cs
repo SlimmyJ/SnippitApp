@@ -31,9 +31,9 @@ namespace SnippitApp
         }
 
         //display text
-        private void ListBoxOverView_SelectionChanged(object sender, SelectionChangedEventArgs e) 
+        private void ListBoxOverView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if(ListBoxOverView.SelectedIndex != -1)
+            if (ListBoxOverView.SelectedIndex != -1)
             {
                 displaySnippit = _repo.GetSnippit(ListBoxOverView.SelectedIndex);
 
@@ -41,9 +41,8 @@ namespace SnippitApp
                 {
                     MainSnipWindow.Text = displaySnippit.SnipContent;
                 }
-            }           
-            
-        }        
+            }
+        }
 
         private void MenuItemNew_Click(object sender, RoutedEventArgs e)
         {
@@ -51,6 +50,10 @@ namespace SnippitApp
             newWindow.Owner = this;
             newWindow.SaveButtonClicked += UpdateListBox;
             newWindow.Show();
+        }
+
+        private void MenuItemAuthorNew_Click(object sender, RoutedEventArgs e)
+        {
         }
 
         private void MenuItemDelete_Click(object sender, RoutedEventArgs e)
@@ -69,6 +72,7 @@ namespace SnippitApp
             ListBoxOverView.Items.Clear();
             FillListBoxItems();
         }
+
         //non event versie (reverse overload?) om in deze klasse te kunnen gebruiken
         private void UpdateListBox()
         {
@@ -76,6 +80,15 @@ namespace SnippitApp
             FillListBoxItems();
         }
 
+        private void GetFromRepo(object sender, RoutedEventArgs e)
+        {
+            JsonReader jsonbro = new JsonReader();
+            SnippitList = jsonbro.GetSnippitListFromJson(@"C:\Users\simon\source\repos\SnippitApp\SnippitApp\bin\Debug\netcoreapp3.1\Testlist");
+            UpdateListBox();
+        }
 
+        private void SaveToRepo(object sender, RoutedEventArgs e)
+        {
+        }
     }
 }

@@ -1,29 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace SnippitApp
 {
-    class SnippitRepo
+    internal class SnippitRepo
     {
         private static List<CodeSnippit> _snippitListRepo;
-        private static SnippitRepo _repo; 
-        
+        private static SnippitRepo _repo;
+        private JsonReader _jasonBro;
+
         public static SnippitRepo GetSnippetRepo()
         {
-            if(_repo == null)
+            if (_repo == null)
             {
                 _repo = new SnippitRepo();
             }
             return _repo;
         }
-        
+
         //GET op basis van ID
         //public CodeSnippit GetSnippit(int id)
         //{
         //    //List<CodeSnippit> allSnippits = GetSnippits();
-        //    var selectedSnippit = _snippitListRepo.Where(x => x.SnipID == id).FirstOrDefault();            
+        //    var selectedSnippit = _snippitListRepo.Where(x => x.SnipID == id).FirstOrDefault();
 
         //    return selectedSnippit;
         //}
@@ -32,13 +30,13 @@ namespace SnippitApp
         public CodeSnippit GetSnippit(int index)
         {
             CodeSnippit[] allSnippits = GetSnippits().ToArray();
-             
+
             return allSnippits[index];
         }
 
         public List<CodeSnippit> GetSnippits()
         {
-            if(_snippitListRepo == null)
+            if (_snippitListRepo == null)
             {
                 _snippitListRepo = GenerateExampleSnippits();
             }
@@ -55,6 +53,7 @@ namespace SnippitApp
         {
             _snippitListRepo.Remove(snippit);
         }
+
         public void RemoveSnippitFromRepo(int index)
         {
             _snippitListRepo.RemoveAt(index);
@@ -63,7 +62,6 @@ namespace SnippitApp
         private List<CodeSnippit> GenerateExampleSnippits()
         {
             List<CodeSnippit> snippitlistrepo = new List<CodeSnippit>();
-            //JsonWriter fuckingdoit = new JsonWriter();
 
             snippitlistrepo.Add(new CodeSnippit("ThisSnippit", "You", "Summary", "Content"));
             snippitlistrepo.Add(new CodeSnippit("ThisSnippit2", "You2", "Summary2", "Content2"));
@@ -76,8 +74,6 @@ namespace SnippitApp
             snippitlistrepo.Add(new CodeSnippit("ThisSnippit9", "You9", "Summary9", "Content9"));
             snippitlistrepo.Add(new CodeSnippit("ThisSnippit10", "You10", "Summary10", "Content10"));
             snippitlistrepo.Add(new CodeSnippit("ThisSnippit11", "You11", "Summary11", "Content11"));
-
-            //fuckingdoit.ToJson(snippitlistrepo);
 
             return snippitlistrepo;
         }

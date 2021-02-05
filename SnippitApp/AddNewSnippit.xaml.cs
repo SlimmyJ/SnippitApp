@@ -1,14 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace SnippitApp
 {
@@ -18,9 +9,10 @@ namespace SnippitApp
     public partial class AddNewSnippit : Window
     {
         private SnippitRepo _repo;
-        string newSnipName;
-        string newSnipSummary;
-        string newSnipContent;
+        private string newSnipName;
+        private string newSnipSummary;
+        private string newSnipContent;
+
         public AddNewSnippit()
         {
             InitializeComponent();
