@@ -41,7 +41,7 @@ namespace SnippitApp
                 {
                     MainSnipWindow.Text = displaySnippit.SnipContent;
                 }
-            }           
+            }    
             
         }        
 
@@ -76,6 +76,19 @@ namespace SnippitApp
             FillListBoxItems();
         }
 
-
+        private void btnTest_Click(object sender, RoutedEventArgs e)
+        {
+            Style st = FindResource("Style1") as Style;
+            Style st2 = FindResource("Style2") as Style;
+            if (MainSnipWindow.Style == st2)
+            {
+                MainSnipWindow.Style = st;
+            }
+            else
+            {
+                MainSnipWindow.Style = st2;
+            }
+            
+        }
     }
 }

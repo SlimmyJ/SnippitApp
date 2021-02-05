@@ -3,5 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
+        <Style TargetType="TextBlock" x:Key="Style1">
+            <Setter Property="Background" Value="AliceBlue"/>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="Style2">
+            <Setter Property="Background" Value="LightSkyBlue"/>
+        </Style>
     </Application.Resources>
 </Application>
