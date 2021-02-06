@@ -7,8 +7,19 @@ namespace SnippitApp
         private List<CodeSnippit> _snippitList;
         private IReader _reader;
         private IWriter _writer;
+        private static SnippitHandler snippitHandler;
 
-        public SnippitHandler()
+        public static SnippitHandler GetSnippitHandler()
+        {
+            if (snippitHandler == null)
+            {
+                snippitHandler = new SnippitHandler();
+            }
+
+            return snippitHandler;
+        }
+
+        private SnippitHandler()
         {
             _reader = new JsonReader();
             _writer = new JsonWriter();
@@ -23,6 +34,18 @@ namespace SnippitApp
         public void CreateSnippitList()
         {
             _snippitList = _reader.GetSnippitListFromJson();
+        }
+
+        public void WriteToList()
+        {
+        }
+
+        public void AddToList()
+        {
+        }
+
+        public void DeleteFromList()
+        {
         }
     }
 }
