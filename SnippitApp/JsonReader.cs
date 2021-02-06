@@ -4,7 +4,7 @@ using System.Text.Json;
 
 namespace SnippitApp
 {
-    public class JsonReader
+    public class JsonReader : IReader
     {
         public string _jsonString { get; private set; }
 

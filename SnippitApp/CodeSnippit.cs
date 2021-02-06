@@ -7,7 +7,6 @@ namespace SnippitApp
         private int _snipId = 0;
         public string SnipName { get; set; }
         public string SnipSummary { get; set; }
-        public CodeinSnippit Codestring { get; set; }
 
         public string SnipContent { get; set; }
 
@@ -28,12 +27,12 @@ namespace SnippitApp
         {
         }
 
-        public CodeSnippit(string name, string summary, string content, string author = "unknown")
+        public CodeSnippit(string name, string summary, string content)
         {
             _snipId++;
             SnipID = _snipId = 0;
             SnipName = name;
-            SnipAuthor = author;
+
             SnipSummary = summary;
             SnipContent = content;
         }

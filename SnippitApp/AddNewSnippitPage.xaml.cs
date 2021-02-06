@@ -24,10 +24,10 @@ namespace SnippitApp
         private string newSnipName;
         private string newSnipSummary;
         private string newSnipContent;
-        public SnippitRepo _repo;
+        public SnippitHandler _repo;
         public List<CodeSnippit> addNewSnippitList;
 
-        public AddNewSnippitPage(List<CodeSnippit> codeSnippits, SnippitRepo snippitRepo)
+        public AddNewSnippitPage(List<CodeSnippit> codeSnippits, SnippitHandler snippitRepo)
         {
             InitializeComponent();
             _repo = snippitRepo;

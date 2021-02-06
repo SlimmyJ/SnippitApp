@@ -9,11 +9,7 @@
         Width="800"
         Height="450"
         mc:Ignorable="d">
-    <Window.Resources>
-        <local:CodeSnippit x:Key="WindowSnippit" />
-        <local:SnippitRepo x:Key="WindowsRepo" />
-        <local:CodeinSnippit x:Key="WindowsCodeinSnippit" />
-    </Window.Resources>
+    <Window.Resources />
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.25*" />

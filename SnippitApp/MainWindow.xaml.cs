@@ -9,23 +9,21 @@ namespace SnippitApp
     /// </summary>
     public partial class MainWindow : Window
     {
-        public SnippitRepo _repo;
-        public List<CodeSnippit> SnippitList;
+        public SnippitHandler SnippitHandler;
         public CodeSnippit displaySnippit;
 
         public MainWindow()
         {
             InitializeComponent();
-            _repo = new SnippitRepo();
-            _repo.SnippitListRepo = SnippitList;
-            ListBoxOverView.ItemsSource = SnippitList;
+            SnippitHandler.CreateSnippitList();
+            ListBoxOverView.ItemsSource = SnippitHandler.GetSnippitList();
         }
 
         //display text
 
         private void MenuItemNew_Click(object sender, RoutedEventArgs e)
         {
-            MainWindowFrame.NavigationService.Navigate(new AddNewSnippitPage(SnippitList, _repo));
+            //MainWindowFrame.NavigationService.Navigate(new AddNewSnippitPage(SnippitList, _repo));
         }
 
         private void MenuItemDelete_Click(object sender, RoutedEventArgs e)
@@ -41,20 +39,11 @@ namespace SnippitApp
 
         private void GetFromRepo(object sender, RoutedEventArgs e)
         {
-            SnippitList = _repo.Jasonbro.GetSnippitListFromJson();
-            ListBoxOverView.ItemsSource = SnippitList;
-            Application.Current.Resources["AppCodeSnippit"] = SnippitList;
+            ListBoxOverView.ItemsSource = SnippitHandler.GetSnippitList();
+            Application.Current.Resources["AppCodeSnippit"] = SnippitHandler.GetSnippitList();
         }
 
         private void SaveToRepo(object sender, RoutedEventArgs e)
-        {
-            JsonWriter jsonbro = new JsonWriter();
-            jsonbro.ToJson(SnippitList);
-            JsonReader jsonbro2 = new JsonReader();
-            SnippitList = jsonbro2.GetSnippitListFromJson();
-        }
-
-        private void Label_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
         {
         }
     }
