@@ -10,7 +10,7 @@ namespace SnippitApp
 
         private string _filePath = @"Testlist.json";
 
-        public List<CodeSnippit> GetSnippitListFromJson()
+        public List<CodeSnippit> GetSnippitList()
         {
             _jsonString = File.ReadAllText(_filePath);
             List<CodeSnippit> CodeSnippitList = new List<CodeSnippit>();

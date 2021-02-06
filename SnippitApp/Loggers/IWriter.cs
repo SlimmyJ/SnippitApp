@@ -4,6 +4,6 @@ namespace SnippitApp
 {
     public interface IWriter
     {
-        void ToJson(List<CodeSnippit> thelist);
+        void WriteTo(List<CodeSnippit> thelist);
     }
 }

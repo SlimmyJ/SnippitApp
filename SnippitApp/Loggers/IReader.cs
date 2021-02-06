@@ -6,6 +6,6 @@ namespace SnippitApp
     {
         string _jsonString { get; }
 
-        List<CodeSnippit> GetSnippitListFromJson();
+        List<CodeSnippit> GetSnippitList();
     }
 }

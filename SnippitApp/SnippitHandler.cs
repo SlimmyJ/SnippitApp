@@ -55,12 +55,12 @@ namespace SnippitApp
 
         public void CreateSnippitList()
         {
-            _snippitList = _reader.GetSnippitListFromJson();
+            _snippitList = _reader.GetSnippitList();
         }
 
         public void WriteToFile(List<CodeSnippit> list)
         {
-            _writer.ToJson(_snippitList);
+            _writer.WriteTo(_snippitList);
         }
 
         public void AddToList(CodeSnippit codesnippit)

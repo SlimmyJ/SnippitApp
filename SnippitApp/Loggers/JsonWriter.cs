@@ -4,12 +4,12 @@ using System.Text.Json;
 
 namespace SnippitApp
 {
-    public class JsonWriter : IWriter
+    public class JsonWriter : Writer
     {
         public string jsonwriterstring = new string("");
         private string _filePath = @"Testlist.json";
 
-        public void ToJson(List<CodeSnippit> thelist)
+        public void WriteTo(List<CodeSnippit> thelist)
         {
             var options = new JsonSerializerOptions();
             options.IncludeFields = true;
