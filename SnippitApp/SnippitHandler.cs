@@ -1,12 +1,13 @@
 ﻿using System.Collections.Generic;
 using System;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 
 namespace SnippitApp
 {
     public class SnippitHandler
     {
         private List<CodeSnippit> _snippitList;
-        private List<IObservable<CodeSnippit>> observables;
         private IReader _reader;
         private IWriter _writer;
         private static SnippitHandler snippitHandler;
@@ -30,7 +31,18 @@ namespace SnippitApp
 
         public List<CodeSnippit> GetSnippitList()
         {
+
             return _snippitList;
+        }
+
+        public BindingList<CodeSnippit> GetBindingSnippitList()
+        {
+            BindingList<CodeSnippit> temp = new BindingList<CodeSnippit>();
+            foreach (var item in _snippitList)
+            {
+                temp.Add(item);
+            }
+            return temp;
         }
 
         public void CreateSnippitList()

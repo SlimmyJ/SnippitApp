@@ -14,7 +14,7 @@ namespace SnippitApp
         {
             InitializeComponent();
             SnippitHandler = SnippitHandler.GetSnippitHandler();
-            ListBoxOverView.ItemsSource = SnippitHandler.GetSnippitList();
+            ListBoxOverView.ItemsSource = SnippitHandler.GetBindingSnippitList();
         }
 
         private void MenuItemNew_Click(object sender, RoutedEventArgs e)

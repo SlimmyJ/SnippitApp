@@ -8,7 +8,7 @@ namespace SnippitApp
     {
         public string _jsonString { get; private set; }
 
-        private string _filePath = @"C:\Users\simon\source\repos\SnippitApp\SnippitApp\bin\Debug\netcoreapp3.1\Testlist.json";
+        private string _filePath = @"Testlist.json";
 
         public List<CodeSnippit> GetSnippitListFromJson()
         {
