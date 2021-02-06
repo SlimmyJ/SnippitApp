@@ -68,8 +68,7 @@
         <ListBox x:Name="ListBoxOverView"
                  Grid.Row="2"
                  Padding="10"
-                 IsSynchronizedWithCurrentItem="False"
-                 ItemsSource="{Binding Mode=OneWay, Source={StaticResource WindowsRepo}}">
+                 IsSynchronizedWithCurrentItem="True">
             <ListBox.ContextMenu>
                 <ContextMenu>
                     <MenuItem Click="MenuItemDelete_Click"

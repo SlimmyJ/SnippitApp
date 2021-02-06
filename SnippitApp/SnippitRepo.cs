@@ -12,11 +12,6 @@ namespace SnippitApp
         {
             Jasonbro = new JsonReader();
             Jasonsis = new JsonWriter();
-            Jasonbro.GetSnippitListFromJson();
-        }
-
-        public void AddSnippitToRepo()
-        {
         }
     }
 }

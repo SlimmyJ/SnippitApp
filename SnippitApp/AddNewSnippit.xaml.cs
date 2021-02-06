@@ -27,6 +27,7 @@ namespace SnippitApp
         protected virtual void OnSaveButtonClicked(RoutedEventArgs e)
         {
             SaveButtonClicked?.Invoke(this, e);
+            addNewSnippitList = _repo.SnippitListRepo;
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)

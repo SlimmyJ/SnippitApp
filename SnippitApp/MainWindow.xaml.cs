@@ -16,18 +16,9 @@ namespace SnippitApp
         public MainWindow()
         {
             InitializeComponent();
-            ListBoxOverView.ItemsSource = SnippitList;
             _repo = new SnippitRepo();
-            SnippitList = new List<CodeSnippit>();
-            FillListBoxItems();
-        }
-
-        public void FillListBoxItems()
-        {
-            foreach (CodeSnippit item in SnippitList)
-            {
-                ListBoxOverView.Items.Add(item.ToString());
-            }
+            _repo.SnippitListRepo = SnippitList;
+            ListBoxOverView.ItemsSource = SnippitList;
         }
 
         //display text
@@ -38,7 +29,6 @@ namespace SnippitApp
             {
                 Owner = this
             };
-            newWindow.SaveButtonClicked += UpdateListBox;
             newWindow.Show();
         }
 
@@ -48,28 +38,15 @@ namespace SnippitApp
             {
                 //_repo.RemoveSnippitFromRepo(displaySnippit);
                 //_repo.RemoveSnippitFromRepo(ListBoxOverView.SelectedIndex);
-                UpdateListBox();
+
                 //MainSnipWindow.ClearValue();
             }
-        }
-
-        private void UpdateListBox(object sender, EventArgs e)
-        {
-            ListBoxOverView.Items.Clear();
-            FillListBoxItems();
-        }
-
-        //non event versie (reverse overload?) om in deze klasse te kunnen gebruiken
-        private void UpdateListBox()
-        {
-            ListBoxOverView.Items.Clear();
-            FillListBoxItems();
         }
 
         private void GetFromRepo(object sender, RoutedEventArgs e)
         {
             SnippitList = _repo.Jasonbro.GetSnippitListFromJson();
-            UpdateListBox();
+            ListBoxOverView.ItemsSource = SnippitList;
         }
 
         private void SaveToRepo(object sender, RoutedEventArgs e)
@@ -78,8 +55,6 @@ namespace SnippitApp
             jsonbro.ToJson(SnippitList);
             JsonReader jsonbro2 = new JsonReader();
             SnippitList = jsonbro2.GetSnippitListFromJson();
-
-            UpdateListBox();
         }
     }
 }
