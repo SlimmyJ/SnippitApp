@@ -15,7 +15,7 @@ namespace SnippitApp
         public MainWindow()
         {
             InitializeComponent();
-            SnippitHandler.CreateSnippitList();
+            SnippitHandler = new SnippitHandler();
             ListBoxOverView.ItemsSource = SnippitHandler.GetSnippitList();
         }
 

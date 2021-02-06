@@ -38,8 +38,7 @@ namespace SnippitApp
 
         protected virtual void OnSaveButtonClicked(RoutedEventArgs e)
         {
-            SaveButtonClicked?.Invoke(this, e);
-            addNewSnippitList = _repo.SnippitListRepo;
+            // SaveButtonClicked?.Invoke(this, e); addNewSnippitList = _repo.SnippitListRepo;
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
@@ -51,7 +50,7 @@ namespace SnippitApp
             SaveFields();
             var snippit = CreateNewSnippet();
             addNewSnippitList.Add(snippit);
-            _repo.Jasonsis.ToJson(addNewSnippitList);
+            //_repo.Jasonsis.ToJson(addNewSnippitList);
             OnSaveButtonClicked(e);
         }
 
