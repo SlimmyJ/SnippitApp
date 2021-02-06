@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows;
-using System.Windows.Controls;
 
 namespace SnippitApp
 {
@@ -17,9 +16,8 @@ namespace SnippitApp
         public MainWindow()
         {
             InitializeComponent();
-            _repo = new SnippitRepo();
-            JsonReader json = new JsonReader();
-            SnippitList = json.GetSnippitListFromJson();
+            _repo = new SnippitRepo(_repo.Jasonbro, _repo.Jasonsis);
+            SnippitList = _repo.Jasonbro.GetSnippitListFromJson();
             FillListBoxItems();
         }
 
@@ -35,7 +33,7 @@ namespace SnippitApp
 
         private void MenuItemNew_Click(object sender, RoutedEventArgs e)
         {
-            AddNewSnippit newWindow = new AddNewSnippit(SnippitList);
+            AddNewSnippit newWindow = new AddNewSnippit(SnippitList, _repo);
             newWindow.Owner = this;
             newWindow.SaveButtonClicked += UpdateListBox;
             newWindow.Show();

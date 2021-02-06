@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Windows;
 using System.Collections.Generic;
+using System.Windows;
 
 namespace SnippitApp
 {
@@ -15,10 +15,11 @@ namespace SnippitApp
         public SnippitRepo _repo;
         public List<CodeSnippit> addNewSnippitList;
 
-        public AddNewSnippit(List<CodeSnippit> codeSnippits)
+        public AddNewSnippit(List<CodeSnippit> codeSnippits, SnippitRepo snippitRepo)
         {
             InitializeComponent();
-            codeSnippits = _repo.jasonbro.GetSnippitListFromJson();
+            _repo = snippitRepo;
+            codeSnippits = _repo.Jasonbro.GetSnippitListFromJson();
         }
 
         public event EventHandler SaveButtonClicked;

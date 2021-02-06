@@ -1,15 +1,12 @@
 ﻿using System.Collections.Generic;
 
-using System.IO;
-using System.Text.Json;
-
 namespace SnippitApp
 {
     public class SnippitRepo
     {
-        private static List<CodeSnippit> _snippitListRepo;
-        public JsonReader jasonbro;
-        public JsonWriter jasonsis;
+        public List<CodeSnippit> SnippitListRepo;
+        public JsonReader Jasonbro;
+        public JsonWriter Jasonsis;
 
         //GET op basis van ID
         //public CodeSnippit GetSnippit(int id)
@@ -22,26 +19,32 @@ namespace SnippitApp
 
         //GET op basis van index
 
+        public SnippitRepo(JsonReader jasonbro, JsonWriter jasonsis)
+        {
+            Jasonbro = jasonbro;
+            Jasonsis = jasonsis;
+        }
+
         public List<CodeSnippit> GetSnippits()
         {
-            jasonbro = new JsonReader();
-            jasonbro.GetSnippitListFromJson();
-            return _snippitListRepo;
+            Jasonbro = new JsonReader();
+            Jasonbro.GetSnippitListFromJson();
+            return SnippitListRepo;
         }
 
         public void AddSnippitToRepo(CodeSnippit snippit)
         {
-            _snippitListRepo.Add(snippit);
+            SnippitListRepo.Add(snippit);
         }
 
         public void RemoveSnippitFromRepo(CodeSnippit snippit)
         {
-            _snippitListRepo.Remove(snippit);
+            SnippitListRepo.Remove(snippit);
         }
 
         public void RemoveSnippitFromRepo(int index)
         {
-            _snippitListRepo.RemoveAt(index);
+            SnippitListRepo.RemoveAt(index);
         }
     }
 }
