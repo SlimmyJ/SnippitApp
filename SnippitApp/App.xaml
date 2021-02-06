@@ -4,6 +4,8 @@
              xmlns:local="clr-namespace:SnippitApp"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <local:SnippitAuthor x:Key="myAuthor"></local:SnippitAuthor>
+        <local:SnippitAuthor x:Key="AppAuthor" />
+        <local:CodeinSnippit x:Key="AppCodeInSnippit" />
+        <local:CodeSnippit x:Key="AppCodeSnippit" />
     </Application.Resources>
 </Application>

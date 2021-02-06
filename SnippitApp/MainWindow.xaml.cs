@@ -16,8 +16,8 @@ namespace SnippitApp
         public MainWindow()
         {
             InitializeComponent();
-            _repo = new SnippitRepo(_repo.Jasonbro, _repo.Jasonsis);
-            SnippitList = _repo.Jasonbro.GetSnippitListFromJson();
+            _repo = new SnippitRepo();
+            SnippitList = new List<CodeSnippit>();
             FillListBoxItems();
         }
 
@@ -33,8 +33,10 @@ namespace SnippitApp
 
         private void MenuItemNew_Click(object sender, RoutedEventArgs e)
         {
-            AddNewSnippit newWindow = new AddNewSnippit(SnippitList, _repo);
-            newWindow.Owner = this;
+            AddNewSnippit newWindow = new AddNewSnippit(SnippitList, _repo)
+            {
+                Owner = this
+            };
             newWindow.SaveButtonClicked += UpdateListBox;
             newWindow.Show();
         }
@@ -44,7 +46,7 @@ namespace SnippitApp
             if (displaySnippit != null)
             {
                 //_repo.RemoveSnippitFromRepo(displaySnippit);
-                _repo.RemoveSnippitFromRepo(ListBoxOverView.SelectedIndex);
+                //_repo.RemoveSnippitFromRepo(ListBoxOverView.SelectedIndex);
                 UpdateListBox();
                 //MainSnipWindow.ClearValue();
             }
@@ -65,7 +67,7 @@ namespace SnippitApp
 
         private void GetFromRepo(object sender, RoutedEventArgs e)
         {
-            SnippitList = _repo.GetSnippits();
+            //SnippitList = _repo.GetSnippits();
             UpdateListBox();
         }
 

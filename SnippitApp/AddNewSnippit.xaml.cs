@@ -38,7 +38,7 @@ namespace SnippitApp
         {
             SaveFields();
             var snippit = CreateNewSnippet();
-            _repo.AddSnippitToRepo(snippit);
+            //_repo.AddSnippitToRepo(snippit);
             OnSaveButtonClicked(e);
             Close();
         }

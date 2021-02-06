@@ -6,12 +6,12 @@ namespace SnippitApp
 {
     public class JsonWriter
     {
-        private string jsonstring = new string("");
+        private string jsonwriterstring = new string("");
 
         public void ToJson(List<CodeSnippit> thelist)
         {
-            jsonstring = JsonSerializer.Serialize(thelist);
-            File.WriteAllText("Testlist", jsonstring);
+            jsonwriterstring = JsonSerializer.Serialize(thelist);
+            File.WriteAllText("Testlist", jsonwriterstring);
         }
     }
 }
