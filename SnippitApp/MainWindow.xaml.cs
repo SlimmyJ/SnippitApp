@@ -25,11 +25,7 @@ namespace SnippitApp
 
         private void MenuItemNew_Click(object sender, RoutedEventArgs e)
         {
-            AddNewSnippit newWindow = new AddNewSnippit(SnippitList, _repo)
-            {
-                Owner = this
-            };
-            newWindow.Show();
+            MainWindowFrame.NavigationService.Navigate(new AddNewSnippitPage(SnippitList, _repo));
         }
 
         private void MenuItemDelete_Click(object sender, RoutedEventArgs e)
@@ -47,6 +43,7 @@ namespace SnippitApp
         {
             SnippitList = _repo.Jasonbro.GetSnippitListFromJson();
             ListBoxOverView.ItemsSource = SnippitList;
+            Application.Current.Resources["AppCodeSnippit"] = SnippitList;
         }
 
         private void SaveToRepo(object sender, RoutedEventArgs e)
@@ -55,6 +52,10 @@ namespace SnippitApp
             jsonbro.ToJson(SnippitList);
             JsonReader jsonbro2 = new JsonReader();
             SnippitList = jsonbro2.GetSnippitListFromJson();
+        }
+
+        private void Label_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
+        {
         }
     }
 }
