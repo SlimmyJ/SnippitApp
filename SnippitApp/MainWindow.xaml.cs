@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Windows;
+﻿using System.Windows;
 
 namespace SnippitApp
 {
@@ -19,8 +17,6 @@ namespace SnippitApp
 
             ListBoxOverView.ItemsSource = SnippitHandler.GetSnippitList();
         }
-
-        //display text
 
         private void MenuItemNew_Click(object sender, RoutedEventArgs e)
         {
