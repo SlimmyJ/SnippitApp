@@ -37,12 +37,14 @@ namespace SnippitApp
 
         private void GetFromRepo(object sender, RoutedEventArgs e)
         {
-            ListBoxOverView.ItemsSource = SnippitHandler.GetSnippitList();
-            Application.Current.Resources["AppCodeSnippit"] = SnippitHandler.GetSnippitList();
+            ListBoxOverView.ItemsSource = SnippitHandler.GetBindingSnippitList();
+
+            //this.Resources["listingDataView"] = SnippitHandler.GetBindingSnippitList();
         }
 
         private void SaveToRepo(object sender, RoutedEventArgs e)
         {
+            SnippitHandler.WriteToFile(SnippitHandler.GetSnippitList());
         }
     }
 }

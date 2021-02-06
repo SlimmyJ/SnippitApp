@@ -4,7 +4,7 @@ namespace SnippitApp
 {
     public class CodeSnippit
     {
-        private int _snipId = 0;
+        private static int _snipId = 0;
         public string SnipName { get; set; }
         public string SnipSummary { get; set; }
 
@@ -30,7 +30,7 @@ namespace SnippitApp
         public CodeSnippit(string name, string summary, string content)
         {
             _snipId++;
-            SnipID = _snipId = 0;
+            SnipID = _snipId;
             SnipName = name;
 
             SnipSummary = summary;

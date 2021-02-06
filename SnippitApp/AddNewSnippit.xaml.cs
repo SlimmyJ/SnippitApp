@@ -15,7 +15,6 @@ namespace SnippitApp
         {
             InitializeComponent();
             Mainwindow = window;
-            window.SnippitHandler.GetSnippitList();
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
@@ -37,8 +36,8 @@ namespace SnippitApp
 
             //Mainwindow.ListBoxOverView.ItemsSource = null;
             //Mainwindow.ListBoxOverView.ItemsSource = Mainwindow.SnippitHandler.GetSnippitList();
+
             Mainwindow.ListBoxOverView.ItemsSource = Mainwindow.SnippitHandler.GetBindingSnippitList();
-            Mainwindow.SnippitHandler.WriteToFile(Mainwindow.SnippitHandler.GetSnippitList());
 
             Close();
         }
