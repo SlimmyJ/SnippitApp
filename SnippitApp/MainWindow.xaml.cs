@@ -16,6 +16,7 @@ namespace SnippitApp
         public MainWindow()
         {
             InitializeComponent();
+            ListBoxOverView.ItemsSource = SnippitList;
             _repo = new SnippitRepo();
             SnippitList = new List<CodeSnippit>();
             FillListBoxItems();

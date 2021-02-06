@@ -19,7 +19,7 @@ namespace SnippitApp
         {
             InitializeComponent();
             _repo = snippitRepo;
-            codeSnippits = _repo.Jasonbro.GetSnippitListFromJson();
+            addNewSnippitList = codeSnippits;
         }
 
         public event EventHandler SaveButtonClicked;
@@ -38,7 +38,8 @@ namespace SnippitApp
         {
             SaveFields();
             var snippit = CreateNewSnippet();
-            //_repo.AddSnippitToRepo(snippit);
+            addNewSnippitList.Add(snippit);
+            _repo.Jasonsis.ToJson(addNewSnippitList);
             OnSaveButtonClicked(e);
             Close();
         }
