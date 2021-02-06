@@ -36,16 +36,19 @@ namespace SnippitApp
             _snippitList = _reader.GetSnippitListFromJson();
         }
 
-        public void WriteToList()
+        public void WriteToFile(List<CodeSnippit> list)
         {
+            _writer.ToJson(_snippitList);
         }
 
-        public void AddToList()
+        public void AddToList(CodeSnippit codesnippit)
         {
+            _snippitList.Add(codesnippit);
         }
 
-        public void DeleteFromList()
+        public void DeleteFromList(CodeSnippit codesnippit)
         {
+            //_snippitList.Remove(codesnippit);
         }
     }
 }

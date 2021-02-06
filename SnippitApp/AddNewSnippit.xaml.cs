@@ -9,25 +9,12 @@ namespace SnippitApp
     /// </summary>
     public partial class AddNewSnippit : Window
     {
-        private string newSnipName;
-        private string newSnipSummary;
-        private string newSnipContent;
-        public SnippitHandler _repo;
-        public List<CodeSnippit> addNewSnippitList;
+        public SnippitHandler SnippitHandler;
 
-        public AddNewSnippit(List<CodeSnippit> codeSnippits, SnippitHandler snippitRepo)
+        public AddNewSnippit()
         {
             InitializeComponent();
-            _repo = snippitRepo;
-            addNewSnippitList = codeSnippits;
-        }
-
-        public event EventHandler SaveButtonClicked;
-
-        protected virtual void OnSaveButtonClicked(RoutedEventArgs e)
-        {
-            // SaveButtonClicked?.Invoke(this, e);
-            //addNewSnippitList = _repo.SnippitListRepo;
+            SnippitHandler = SnippitHandler.GetSnippitHandler();
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
@@ -35,28 +22,18 @@ namespace SnippitApp
             Close();
         }
 
-        private void btnSave_Click(object sender, RoutedEventArgs e)
-        {
-            SaveFields();
-            var snippit = CreateNewSnippet();
-            addNewSnippitList.Add(snippit);
-            //_repo.Jasonsis.ToJson(addNewSnippitList);
-            OnSaveButtonClicked(e);
-            Close();
-        }
-
         private CodeSnippit CreateNewSnippet()
         {
-            CodeSnippit newSnippit = new CodeSnippit(newSnipName, newSnipSummary, newSnipContent);
-
+            CodeSnippit newSnippit = new CodeSnippit(txtName.Text, txtSummary.Text, txtContent.Text);
             return newSnippit;
         }
 
-        private void SaveFields()
+        private void ClickSaveButton(object sender, RoutedEventArgs e)
         {
-            newSnipName = txtName.Text;
-            newSnipSummary = txtSummary.Text;
-            newSnipContent = txtContent.Text;
+            CodeSnippit codeSnippit = CreateNewSnippet();
+            SnippitHandler.AddToList(codeSnippit);
+            SnippitHandler.WriteToFile(SnippitHandler.GetSnippitList());
+            Close();
         }
     }
 }

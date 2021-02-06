@@ -14,12 +14,13 @@ namespace SnippitApp
         {
             InitializeComponent();
             SnippitHandler = SnippitHandler.GetSnippitHandler();
-
             ListBoxOverView.ItemsSource = SnippitHandler.GetSnippitList();
         }
 
         private void MenuItemNew_Click(object sender, RoutedEventArgs e)
         {
+            Window newpage = new AddNewSnippit();
+            newpage.Show();
             //MainWindowFrame.NavigationService.Navigate(new AddNewSnippitPage(SnippitList, _repo));
         }
 
