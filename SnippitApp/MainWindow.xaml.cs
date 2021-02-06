@@ -67,7 +67,7 @@ namespace SnippitApp
 
         private void GetFromRepo(object sender, RoutedEventArgs e)
         {
-            //SnippitList = _repo.GetSnippits();
+            SnippitList = _repo.Jasonbro.GetSnippitListFromJson();
             UpdateListBox();
         }
 

@@ -6,6 +6,7 @@
     <Application.Resources>
         <local:SnippitAuthor x:Key="AppAuthor" />
         <local:CodeinSnippit x:Key="AppCodeInSnippit" />
-        <local:CodeSnippit x:Key="AppCodeSnippit" />
+        <local:CodeSnippit x:Key="AppCodeSnippit"
+                           SnipContent="" />
     </Application.Resources>
 </Application>
