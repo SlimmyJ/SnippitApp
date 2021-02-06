@@ -55,12 +55,10 @@
             </Menu>
         </DockPanel>
         <ListBox x:Name="ListBoxOverView"
-                 Grid.Row="1"
-                 Grid.RowSpan="2"
-                 Grid.ColumnSpan="2"
-                 Margin="0,43,571,0"
-                 Padding="10"
-                 IsSynchronizedWithCurrentItem="True">
+                 Grid.Row="2"
+                 Grid.RowSpan="1"
+                 Grid.ColumnSpan="1"
+                 Padding="10">
             <ListBox.ContextMenu>
                 <ContextMenu>
                     <MenuItem Click="MenuItemDelete_Click"
@@ -68,10 +66,5 @@
                 </ContextMenu>
             </ListBox.ContextMenu>
         </ListBox>
-        <ListBox Grid.Column="2"
-                 IsSynchronizedWithCurrentItem="True" />
-        <Frame x:Name="MainWindowFrame"
-               Grid.Row="2"
-               Grid.Column="1" />
     </Grid>
 </Window>

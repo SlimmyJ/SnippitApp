@@ -1,10 +1,12 @@
 ﻿using System.Collections.Generic;
+using System;
 
 namespace SnippitApp
 {
     public class SnippitHandler
     {
         private List<CodeSnippit> _snippitList;
+        private List<IObservable<CodeSnippit>> observables;
         private IReader _reader;
         private IWriter _writer;
         private static SnippitHandler snippitHandler;

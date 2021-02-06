@@ -19,7 +19,7 @@ namespace SnippitApp
 
         private void MenuItemNew_Click(object sender, RoutedEventArgs e)
         {
-            Window newpage = new AddNewSnippit();
+            Window newpage = new AddNewSnippit(this);
             newpage.Show();
             //MainWindowFrame.NavigationService.Navigate(new AddNewSnippitPage(SnippitList, _repo));
         }

@@ -9,12 +9,13 @@ namespace SnippitApp
     /// </summary>
     public partial class AddNewSnippit : Window
     {
-        public SnippitHandler SnippitHandler;
+        public MainWindow Mainwindow;
 
-        public AddNewSnippit()
+        public AddNewSnippit(MainWindow window)
         {
             InitializeComponent();
-            SnippitHandler = SnippitHandler.GetSnippitHandler();
+            Mainwindow = window;
+            window.SnippitHandler.GetSnippitList();
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
@@ -31,8 +32,11 @@ namespace SnippitApp
         private void ClickSaveButton(object sender, RoutedEventArgs e)
         {
             CodeSnippit codeSnippit = CreateNewSnippet();
-            SnippitHandler.AddToList(codeSnippit);
-            SnippitHandler.WriteToFile(SnippitHandler.GetSnippitList());
+
+            Mainwindow.SnippitHandler.AddToList(codeSnippit);
+
+            Mainwindow.SnippitHandler.WriteToFile(Mainwindow.SnippitHandler.GetSnippitList());
+
             Close();
         }
     }
