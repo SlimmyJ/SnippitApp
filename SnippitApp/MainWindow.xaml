@@ -1,7 +1,8 @@
 ﻿<Window x:Class="SnippitApp.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:SnippitApp"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         Title="MainWindow"
         Width="800"
@@ -9,6 +10,7 @@
         mc:Ignorable="d">
     <Window.Resources>
         <CollectionViewSource x:Key="listingDataView" />
+        <local:ResourceSnippitList x:Key="XAMLLIST" />
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -66,20 +68,10 @@
                 </ContextMenu>
             </ListBox.ContextMenu>
         </ListBox>
-        <ListView Grid.Row="2"
-                  Grid.Column="1">
-            <ListView.ItemsSource>
-                <Binding Source="{StaticResource listingDataView}" />
-            </ListView.ItemsSource>
-            <ListView.View>
-                <GridView AllowsColumnReorder="False"
-                          ColumnHeaderToolTip="Snippit INFO">
-                    <GridViewColumn Width="300"
-                                    DisplayMemberBinding="{Binding SnipContent}"
-                                    Header="Content" />
-                    <GridViewColumn Header="Author" />
-                </GridView>
-            </ListView.View>
-        </ListView>
+        <ListView x:Name="ListViewXaml"
+                  Grid.Row="2"
+                  Grid.Column="1"
+                  IsSynchronizedWithCurrentItem="True"
+                  SelectedIndex="1" />
     </Grid>
 </Window>

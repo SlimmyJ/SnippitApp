@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Controls;
 
 namespace SnippitApp
 {
@@ -15,6 +16,8 @@ namespace SnippitApp
             InitializeComponent();
             SnippitHandler = SnippitHandler.GetSnippitHandler();
             ListBoxOverView.ItemsSource = SnippitHandler.GetBindingSnippitList();
+            ListViewXaml.ItemsSource = SnippitHandler.GetBindingSnippitList();
+            this.Resources["listingDataView"] = SnippitHandler.GetBindingSnippitList();
         }
 
         private void MenuItemNew_Click(object sender, RoutedEventArgs e)
