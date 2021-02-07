@@ -8,7 +8,7 @@ namespace SnippitApp
     {
         public string _jsonString { get; private set; }
 
-        private string _filePath = @"Testlist.json";
+        private string _filePath = "../../../Db/Testlist.json";
 
         public List<CodeSnippit> GetSnippitList()
         {

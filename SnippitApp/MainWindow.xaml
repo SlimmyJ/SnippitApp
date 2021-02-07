@@ -38,8 +38,9 @@
                 <MenuItem Header="_Snippit">
                     <MenuItem Click="MenuItemNew_Click"
                               Header="_New" />
-                    <MenuItem Header="_Edit" />
-                    <MenuItem Header="_Delete" />
+                    <MenuItem Header="_Edit" 
+                              Click="MenuItem_Click"/>
+                    <MenuItem Header="_Delete" Click="MenuItemDelete_Click" />
                     <Separator />
                     <MenuItem Header="_Exit" />
                 </MenuItem>

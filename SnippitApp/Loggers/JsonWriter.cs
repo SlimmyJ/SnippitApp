@@ -7,7 +7,7 @@ namespace SnippitApp
     public class JsonWriter : IWriter
     {
         public string jsonwriterstring = new string("");
-        private string _filePath = @"Testlist.json";
+        private string _filePath = "../../../Db/Testlist.json";
 
         public void WriteTo(List<CodeSnippit> thelist)
         {
