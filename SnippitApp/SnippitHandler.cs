@@ -10,9 +10,12 @@ namespace SnippitApp
     public class SnippitHandler
     {
         private List<CodeSnippit> _snippitList;
+
         //private SnippitList _snippitList;
         private IReader _reader;
-        private IWriter _writer;
+
+        private JsonWriter _writer;
+        private DataBaseWriter _databaseWriter;
         private static SnippitHandler snippitHandler;
 
         public static SnippitHandler GetSnippitHandler()
@@ -27,23 +30,26 @@ namespace SnippitApp
 
         private SnippitHandler()
         {
-            _reader = new JsonReader();
+            _reader = new DataBaseReader();
             _writer = new JsonWriter();
+            _databaseWriter = new DataBaseWriter();
             //_snippitList = new SnippitList();
             CreateSnippitList();
         }
 
         public List<CodeSnippit> GetSnippitList()
         {
-
             return _snippitList;
         }
 
         public BindingList<CodeSnippit> GetBindingSnippitList()
         {
             BindingList<CodeSnippit> temp = new BindingList<CodeSnippit>();
+            _snippitList.Clear();
+            CreateSnippitList();
 
             _snippitList.ForEach(CodeSnippit => temp.Add(CodeSnippit));
+
 
             //foreach (var i in _snippitList)
             //{
@@ -61,6 +67,8 @@ namespace SnippitApp
         public void WriteToFile(List<CodeSnippit> list)
         {
             _writer.WriteTo(_snippitList);
+            //_databaseWriter.WriteTo(_snippitList[_snippitList.Count]);
+            _databaseWriter.WriteTo(_snippitList.LastOrDefault());
         }
 
         public void AddToList(CodeSnippit codesnippit)
@@ -68,9 +76,20 @@ namespace SnippitApp
             _snippitList.Add(codesnippit);
         }
 
-        public void DeleteFromList(CodeSnippit codesnippit)
+        public void DeleteFromList(CodeSnippit snippit)
         {
             //_snippitList.Remove(codesnippit);
+            _databaseWriter.DeletePost(snippit);
+        }
+
+        public void UpdateSnippit(CodeSnippit snippit)
+        {
+            _databaseWriter.UpdatePost(snippit);
+        }
+
+        public CodeSnippit GetSnippîtFromList(int index)
+        {
+            return _snippitList[index];
         }
     }
 }

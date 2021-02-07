@@ -26,13 +26,7 @@ namespace SnippitApp
 
         private void MenuItemDelete_Click(object sender, RoutedEventArgs e)
         {
-            if (displaySnippit != null)
-            {
-                //_repo.RemoveSnippitFromRepo(displaySnippit);
-                //_repo.RemoveSnippitFromRepo(ListBoxOverView.SelectedIndex);
-
-                //MainSnipWindow.ClearValue();
-            }
+            SnippitHandler.DeleteFromList(SnippitHandler.GetSnippîtFromList(ListBoxOverView.SelectedIndex));
         }
 
         private void GetFromRepo(object sender, RoutedEventArgs e)
@@ -45,6 +39,14 @@ namespace SnippitApp
         private void SaveToRepo(object sender, RoutedEventArgs e)
         {
             SnippitHandler.WriteToFile(SnippitHandler.GetSnippitList());
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)       
+        {
+            
+            CodeSnippit snippit = SnippitHandler.GetSnippîtFromList(ListBoxOverView.SelectedIndex);
+            snippit.author = "7/02/2021 21:13:55";
+            SnippitHandler.UpdateSnippit(snippit);
         }
     }
 }

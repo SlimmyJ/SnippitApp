@@ -4,42 +4,33 @@ namespace SnippitApp
 {
     public class CodeSnippit
     {
-        private static int _snipId = 0;
-        public string SnipName { get; set; }
-        public string SnipSummary { get; set; }
+        //private static int _snipId = 0;
+        public string _id { get; set; }
+        public string name { get; set; }
+        public string content { get; set; }
+        public string author { get; set; }
+        public string summary { get; set; }
 
-        public string SnipContent { get; set; }
+        //public int sniplength { get; set; }
 
-        public int SnipID
-        {
-            get { return _snipId; }
-            set { _snipId = value; }
-        }
-
-        public List<Tag> SnipTags { get; set; }
-        public string SnipAuthor { get; set; }
-
-        public int SnipLength { get; set; }
-
-        public int MyProperty { get; set; }
+        //public int myproperty { get; set; }
 
         public CodeSnippit()
         {
         }
 
         public CodeSnippit(string name, string summary, string content)
-        {
-            _snipId++;
-            SnipID = _snipId;
-            SnipName = name;
+        {           
+            this.name = name;
 
-            SnipSummary = summary;
-            SnipContent = content;
+            this.summary = summary;
+            this.content = content;
+            author = "u dikke ma";
         }
 
         public override string ToString()
         {
-            return $"{SnipName}|{SnipAuthor}|{SnipSummary}";
+            return $"{name} | {summary}";
         }
     }
 }

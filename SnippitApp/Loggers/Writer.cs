@@ -8,9 +8,8 @@ namespace SnippitApp
 {
     public abstract class Writer : IWriter
     {
-        public void WriteTo(List<CodeSnippit> thelist)
+        public void WriteTo()
         {
-            throw new NotImplementedException();
         }
     }
 }
