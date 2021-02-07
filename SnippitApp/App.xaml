@@ -1,8 +1,8 @@
 ﻿<Application x:Class="SnippitApp.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             StartupUri="MainWindow.xaml"
-             xmlns:local="clr-namespace:SnippitApp">
+             xmlns:local="clr-namespace:SnippitApp"
+             StartupUri="MainWindow.xaml">
     <Application.Resources>
         <local:CodeSnippit x:Key="AppCodeSnippit" />
     </Application.Resources>

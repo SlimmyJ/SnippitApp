@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace SnippitApp
 {
-    class SnippitList
+    internal class SnippitList
     {
         private List<CodeSnippit> _snippitList;
     }

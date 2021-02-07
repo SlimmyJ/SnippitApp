@@ -1,17 +1,15 @@
 ﻿using System.Collections.Generic;
-using System;
-using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Windows;
-using System.Linq;
 
 namespace SnippitApp
 {
     public class SnippitHandler
     {
         private List<CodeSnippit> _snippitList;
+
         //private SnippitList _snippitList;
         private IReader _reader;
+
         private IWriter _writer;
         private static SnippitHandler snippitHandler;
 
@@ -35,7 +33,6 @@ namespace SnippitApp
 
         public List<CodeSnippit> GetSnippitList()
         {
-
             return _snippitList;
         }
 

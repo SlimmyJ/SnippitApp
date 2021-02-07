@@ -4,7 +4,7 @@ using System.Text.Json;
 
 namespace SnippitApp
 {
-    public class JsonWriter : Writer
+    public class JsonWriter : IWriter
     {
         public string jsonwriterstring = new string("");
         private string _filePath = @"Testlist.json";

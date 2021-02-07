@@ -38,8 +38,7 @@ namespace SnippitApp
         private void GetFromRepo(object sender, RoutedEventArgs e)
         {
             ListBoxOverView.ItemsSource = SnippitHandler.GetBindingSnippitList();
-
-            //this.Resources["listingDataView"] = SnippitHandler.GetBindingSnippitList();
+            this.Resources["listingDataView"] = SnippitHandler.GetBindingSnippitList();
         }
 
         private void SaveToRepo(object sender, RoutedEventArgs e)
