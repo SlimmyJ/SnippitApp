@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace SnippitApp
 {
-    class CsvWriter : Writer
+    internal class CsvWriter : Writer
     {
         public void WriteTo(List<CodeSnippit> thelist)
         {

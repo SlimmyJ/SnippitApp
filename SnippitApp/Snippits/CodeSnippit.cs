@@ -1,11 +1,10 @@
-﻿using System.Collections.Generic;
-
-namespace SnippitApp
+﻿namespace SnippitApp
 {
     public class CodeSnippit
     {
         //private static int _snipId = 0;
         public string _id { get; set; }
+
         public string name { get; set; }
         public string content { get; set; }
         public string author { get; set; }
@@ -20,7 +19,7 @@ namespace SnippitApp
         }
 
         public CodeSnippit(string name, string summary, string content)
-        {           
+        {
             this.name = name;
 
             this.summary = summary;

@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace SnippitApp
+﻿namespace SnippitApp
 {
     public interface IWriter
     {

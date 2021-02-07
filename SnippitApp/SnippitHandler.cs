@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 
 namespace SnippitApp
 {
@@ -45,7 +46,6 @@ namespace SnippitApp
             CreateSnippitList();
 
             _snippitList.ForEach(CodeSnippit => temp.Add(CodeSnippit));
-
 
             //foreach (var i in _snippitList)
             //{

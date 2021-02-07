@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Newtonsoft.Json;
 using System.Net.Http;
 using System.Text;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
 
 namespace SnippitApp
 {
@@ -24,14 +20,14 @@ namespace SnippitApp
 
         public async void DeletePost(CodeSnippit snippit)
         {
-            string id = snippit._id;            
+            string id = snippit._id;
 
             string json = JsonConvert.SerializeObject(snippit);
 
             using (var client = new HttpClient())
             {
                 var response = await client.DeleteAsync(
-                    "https://snippit-app.herokuapp.com/snippits/" + id);                     
+                    "https://snippit-app.herokuapp.com/snippits/" + id);
             }
         }
 

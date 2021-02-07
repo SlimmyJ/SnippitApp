@@ -1,5 +1,4 @@
 ﻿using System.Windows;
-using System.Windows.Controls;
 
 namespace SnippitApp
 {
@@ -43,9 +42,8 @@ namespace SnippitApp
             SnippitHandler.WriteToFile(SnippitHandler.GetSnippitList());
         }
 
-        private void MenuItem_Click(object sender, RoutedEventArgs e)       
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
-            
             CodeSnippit snippit = SnippitHandler.GetSnippîtFromList(ListBoxOverView.SelectedIndex);
             snippit.author = "7/02/2021 21:13:55";
             SnippitHandler.UpdateSnippit(snippit);

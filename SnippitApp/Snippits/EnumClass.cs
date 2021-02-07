@@ -5,7 +5,7 @@
 
     public enum Languagetype
     { Default = 0, Csharp = 1, XAML = 2, }
-    
+
     internal class EnumClass //We use this class file to keep the enums in one place.
     {
     }
