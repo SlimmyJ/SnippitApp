@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Net;
+using SnippitApp.Loggers;
 
 namespace SnippitApp
 {
@@ -10,13 +11,11 @@ namespace SnippitApp
 
         public List<CodeSnippit> GetSnippitList()
         {
-            List<CodeSnippit> snippits = new List<CodeSnippit>();
-
-            string url = @"https://snippit-app.herokuapp.com/snippits";
+            var url = @"https://snippit-app.herokuapp.com/snippits";
             WebClient client = new WebClient();
-            string response = client.DownloadString(url);
+            var response = client.DownloadString(url);
 
-            snippits = JsonConvert.DeserializeObject<List<CodeSnippit>>(response);
+            var snippits = JsonConvert.DeserializeObject<List<CodeSnippit>>(response);
 
             return snippits;
         }

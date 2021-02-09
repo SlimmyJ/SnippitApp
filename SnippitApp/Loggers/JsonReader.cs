@@ -2,7 +2,7 @@
 using System.IO;
 using System.Text.Json;
 
-namespace SnippitApp
+namespace SnippitApp.Loggers
 {
     public class JsonReader : IReader
     {

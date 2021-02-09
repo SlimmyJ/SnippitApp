@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Collections.Generic;
 
 namespace SnippitApp
 {
@@ -8,7 +9,6 @@ namespace SnippitApp
     public partial class MainWindow : Window
     {
         public SnippitHandler SnippitHandler;
-        public CodeSnippit displaySnippit;
 
         public MainWindow()
         {
@@ -21,9 +21,8 @@ namespace SnippitApp
 
         private void MenuItemNew_Click(object sender, RoutedEventArgs e)
         {
-            Window newpage = new AddNewSnippit(this);
-            newpage.Show();
-            //MainWindowFrame.NavigationService.Navigate(new AddNewSnippitPage(SnippitList, _repo));
+            Window window = new AddNewSnippit(this);
+            window.Show();
         }
 
         private void MenuItemDelete_Click(object sender, RoutedEventArgs e)
@@ -51,7 +50,7 @@ namespace SnippitApp
 
         private void OpenTestDesigner(object sender, RoutedEventArgs e)
         {
-            Window designWindow = new Window1(this);
+            Window designWindow = new DesignWindow(this);
             designWindow.Show();
         }
     }

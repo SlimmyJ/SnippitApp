@@ -1,4 +1,4 @@
-﻿namespace SnippitApp
+﻿namespace SnippitApp.Loggers
 {
     public abstract class Writer : IWriter
     {

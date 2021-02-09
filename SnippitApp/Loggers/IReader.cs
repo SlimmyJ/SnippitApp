@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace SnippitApp
+namespace SnippitApp.Loggers
 {
     public interface IReader
     {

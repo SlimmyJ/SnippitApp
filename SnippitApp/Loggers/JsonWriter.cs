@@ -2,20 +2,18 @@
 using System.IO;
 using System.Text.Json;
 
-namespace SnippitApp
+namespace SnippitApp.Loggers
 {
     public class JsonWriter
     {
-        public string jsonwriterstring = new string("");
-        private string _filePath = "../../../Db/Testlist.json";
+        public string Jsonwriterstring = new string("");
+        private const string FilePath = "../../../Db/Testlist.json";
 
         public void SaveList(List<CodeSnippit> thelist)
         {
-            var options = new JsonSerializerOptions();
-            options.IncludeFields = true;
-            options.WriteIndented = true;
-            string maybe = JsonSerializer.Serialize(thelist); ;
-            File.WriteAllText(_filePath, maybe);
+            var options = new JsonSerializerOptions { IncludeFields = true, WriteIndented = true };
+            var contents = JsonSerializer.Serialize(thelist); ;
+            File.WriteAllText(FilePath, contents);
         }
     }
 }

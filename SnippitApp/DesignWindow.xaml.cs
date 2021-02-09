@@ -1,4 +1,6 @@
 ﻿using System.Windows;
+using System.Collections.Generic;
+
 using System.Windows.Controls;
 
 namespace SnippitApp
@@ -7,12 +9,13 @@ namespace SnippitApp
     /// Interaction logic for Window1.xaml
     /// </summary>
 
-    public partial class Window1 : Window
+    public partial class DesignWindow : Window
     {
         public MainWindow Mainwindow;
         public object SelectedItem { get; set; }
+        public List<CodeSnippit> listofsnippetswindow;
 
-        public Window1(MainWindow window)
+        public DesignWindow(MainWindow window)
         {
             Mainwindow = window;
             InitializeComponent();

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using SnippitApp.Loggers;
 
 namespace SnippitApp
 {
@@ -9,20 +10,15 @@ namespace SnippitApp
         private List<CodeSnippit> _snippitList;
 
         //private SnippitList _snippitList;
-        private IReader _reader;
+        private readonly IReader _reader;
 
-        private JsonWriter _writer;
-        private DataBaseWriter _databaseWriter;
-        private static SnippitHandler snippitHandler;
+        private readonly JsonWriter _writer;
+        private readonly DataBaseWriter _databaseWriter;
+        private static SnippitHandler _snippitHandler;
 
         public static SnippitHandler GetSnippitHandler()
         {
-            if (snippitHandler == null)
-            {
-                snippitHandler = new SnippitHandler();
-            }
-
-            return snippitHandler;
+            return _snippitHandler ??= new SnippitHandler();
         }
 
         private SnippitHandler()
@@ -30,7 +26,7 @@ namespace SnippitApp
             _reader = new DataBaseReader();
             _writer = new JsonWriter();
             _databaseWriter = new DataBaseWriter();
-            //_snippitList = new SnippitList();
+
             CreateSnippitList();
         }
 
@@ -45,7 +41,7 @@ namespace SnippitApp
             _snippitList.Clear();
             CreateSnippitList();
 
-            _snippitList.ForEach(CodeSnippit => temp.Add(CodeSnippit));
+            _snippitList.ForEach(codeSnippit => temp.Add(codeSnippit));
 
             return temp;
         }
