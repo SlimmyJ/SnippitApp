@@ -1,5 +1,5 @@
-﻿using System.Windows;
-using System.Collections.Generic;
+﻿using SnippitApp.Snippits;
+using System.Windows;
 
 namespace SnippitApp
 {
@@ -15,25 +15,22 @@ namespace SnippitApp
             InitializeComponent();
             SnippitHandler = SnippitHandler.GetSnippitHandler();
             ListBoxOverView.ItemsSource = SnippitHandler.GetBindingSnippitList();
-
-            this.Resources["listingDataView"] = SnippitHandler.GetBindingSnippitList();
         }
 
-        private void MenuItemNew_Click(object sender, RoutedEventArgs e)
+        private void MenuItemNew_ClickNew(object sender, RoutedEventArgs e)
         {
             Window window = new AddNewSnippit(this);
             window.Show();
         }
 
-        private void MenuItemDelete_Click(object sender, RoutedEventArgs e)
+        private void MenuItem_ClickDelete(object sender, RoutedEventArgs e)
         {
-            SnippitHandler.DeleteFromList(SnippitHandler.GetSnippîtFromList(ListBoxOverView.SelectedIndex));
+            SnippitHandler.DeleteFromList(SnippitHandler.GetSnippitFromList(ListBoxOverView.SelectedIndex));
         }
 
         private void GetFromRepo(object sender, RoutedEventArgs e)
         {
             ListBoxOverView.ItemsSource = SnippitHandler.GetBindingSnippitList();
-            this.Resources["listingDataView"] = SnippitHandler.GetBindingSnippitList();
         }
 
         private void SaveToRepo(object sender, RoutedEventArgs e)
@@ -41,10 +38,10 @@ namespace SnippitApp
             SnippitHandler.WriteToFile(SnippitHandler.GetSnippitList());
         }
 
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        private void MenuItem_ClickEdit(object sender, RoutedEventArgs e)
         {
-            CodeSnippit snippit = SnippitHandler.GetSnippîtFromList(ListBoxOverView.SelectedIndex);
-            snippit.author = "7/02/2021 21:13:55";
+            CodeSnippit snippit = SnippitHandler.GetSnippitFromList(ListBoxOverView.SelectedIndex);
+            snippit.author = "09:02:2021/1219";
             SnippitHandler.UpdateSnippit(snippit);
         }
 

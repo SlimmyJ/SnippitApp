@@ -1,13 +1,9 @@
-﻿using System.Collections.Generic;
-using SnippitApp.Loggers;
-
-namespace SnippitApp
+﻿namespace SnippitApp.Loggers
 {
-    internal class CsvWriter : Writer
+    internal class CsvWriter : IWriter
     {
-        public void WriteTo(List<CodeSnippit> thelist)
+        public void WriterTo()
         {
-            //write to csv
         }
     }
 }

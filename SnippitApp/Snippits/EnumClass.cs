@@ -1,4 +1,4 @@
-﻿namespace SnippitApp
+﻿namespace SnippitApp.Snippits
 {
     public enum Tag
     { Default = 0, Class = 1, Easy = 2, }

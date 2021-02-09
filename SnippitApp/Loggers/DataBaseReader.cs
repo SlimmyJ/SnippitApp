@@ -1,17 +1,17 @@
 ﻿using Newtonsoft.Json;
+using SnippitApp.Snippits;
 using System.Collections.Generic;
 using System.Net;
-using SnippitApp.Loggers;
 
-namespace SnippitApp
+namespace SnippitApp.Loggers
 {
     internal class DataBaseReader : IReader
     {
-        public string _jsonString { get; private set; }
+        public string JsonString { get; private set; }
 
         public List<CodeSnippit> GetSnippitList()
         {
-            var url = @"https://snippit-app.herokuapp.com/snippits";
+            const string url = @"https://snippit-app.herokuapp.com/snippits";
             WebClient client = new WebClient();
             var response = client.DownloadString(url);
 

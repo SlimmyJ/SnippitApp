@@ -1,7 +1,7 @@
-﻿namespace SnippitApp
+﻿namespace SnippitApp.Loggers
 {
     public interface IWriter
     {
-        void WriteTo();
+        void WriterTo();
     }
 }

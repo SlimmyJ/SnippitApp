@@ -2,8 +2,6 @@
 {
     public abstract class Writer : IWriter
     {
-        public void WriteTo()
-        {
-        }
+        public abstract void WriterTo();
     }
 }

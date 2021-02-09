@@ -1,17 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using SnippitApp.Loggers;
+using SnippitApp.Snippits;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
-using SnippitApp.Loggers;
 
 namespace SnippitApp
 {
     public class SnippitHandler
     {
         private List<CodeSnippit> _snippitList;
-
-        //private SnippitList _snippitList;
         private readonly IReader _reader;
-
         private readonly JsonWriter _writer;
         private readonly DataBaseWriter _databaseWriter;
         private static SnippitHandler _snippitHandler;
@@ -26,7 +24,6 @@ namespace SnippitApp
             _reader = new DataBaseReader();
             _writer = new JsonWriter();
             _databaseWriter = new DataBaseWriter();
-
             CreateSnippitList();
         }
 
@@ -38,9 +35,7 @@ namespace SnippitApp
         public BindingList<CodeSnippit> GetBindingSnippitList()
         {
             BindingList<CodeSnippit> temp = new BindingList<CodeSnippit>();
-            _snippitList.Clear();
             CreateSnippitList();
-
             _snippitList.ForEach(codeSnippit => temp.Add(codeSnippit));
 
             return temp;
@@ -53,8 +48,8 @@ namespace SnippitApp
 
         public void WriteToFile(List<CodeSnippit> list)
         {
-            _writer.SaveList(_snippitList);
             _databaseWriter.WriteTo(_snippitList.LastOrDefault());
+            _writer.SaveList(_snippitList);
         }
 
         public void AddToList(CodeSnippit codesnippit)
@@ -72,7 +67,7 @@ namespace SnippitApp
             _databaseWriter.UpdatePost(snippit);
         }
 
-        public CodeSnippit GetSnippîtFromList(int index)
+        public CodeSnippit GetSnippitFromList(int index)
         {
             return _snippitList[index];
         }

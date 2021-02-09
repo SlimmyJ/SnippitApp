@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using SnippitApp.Snippits;
+using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
 
@@ -6,16 +7,15 @@ namespace SnippitApp.Loggers
 {
     public class JsonReader : IReader
     {
-        public string _jsonString { get; private set; }
+        public string JsonString { get; private set; }
 
-        private string _filePath = "../../../Db/Testlist.json";
+        private readonly string _filePath = "../../../Db/Testlist.json";
 
         public List<CodeSnippit> GetSnippitList()
         {
-            _jsonString = File.ReadAllText(_filePath);
-            List<CodeSnippit> CodeSnippitList = new List<CodeSnippit>();
-            CodeSnippitList = JsonSerializer.Deserialize<List<CodeSnippit>>(_jsonString);
-            return CodeSnippitList;
+            JsonString = File.ReadAllText(_filePath);
+            var codeSnippitList = JsonSerializer.Deserialize<List<CodeSnippit>>(JsonString);
+            return codeSnippitList;
         }
     }
 }

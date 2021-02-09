@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using SnippitApp.Snippits;
+using System.Windows;
 
 namespace SnippitApp
 {

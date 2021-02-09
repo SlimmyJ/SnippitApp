@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using SnippitApp.Snippits;
+using System.Collections.Generic;
 
 namespace SnippitApp.Loggers
 {
     public interface IReader
     {
-        string _jsonString { get; }
+        string JsonString { get; }
 
         List<CodeSnippit> GetSnippitList();
     }

@@ -1,4 +1,4 @@
-﻿namespace SnippitApp
+﻿namespace SnippitApp.Snippits
 {
     public class SnippitAuthor
     {
