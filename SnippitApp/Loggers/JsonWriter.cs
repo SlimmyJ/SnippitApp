@@ -9,7 +9,7 @@ namespace SnippitApp
         public string jsonwriterstring = new string("");
         private string _filePath = "../../../Db/Testlist.json";
 
-        public void WriteTo(List<CodeSnippit> thelist)
+        public void SaveList(List<CodeSnippit> thelist)
         {
             var options = new JsonSerializerOptions();
             options.IncludeFields = true;

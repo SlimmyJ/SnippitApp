@@ -32,9 +32,6 @@ namespace SnippitApp
 
             Mainwindow.SnippitHandler.AddToList(codeSnippit);
 
-            //Mainwindow.ListBoxOverView.ItemsSource = null;
-            //Mainwindow.ListBoxOverView.ItemsSource = Mainwindow.SnippitHandler.GetSnippitList();
-
             Mainwindow.ListBoxOverView.ItemsSource = Mainwindow.SnippitHandler.GetBindingSnippitList();
 
             Close();

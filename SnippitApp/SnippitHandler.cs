@@ -47,11 +47,6 @@ namespace SnippitApp
 
             _snippitList.ForEach(CodeSnippit => temp.Add(CodeSnippit));
 
-            //foreach (var i in _snippitList)
-            //{
-            //    temp.Add(i);
-            //}
-
             return temp;
         }
 
@@ -62,8 +57,7 @@ namespace SnippitApp
 
         public void WriteToFile(List<CodeSnippit> list)
         {
-            _writer.WriteTo(_snippitList);
-            //_databaseWriter.WriteTo(_snippitList[_snippitList.Count]);
+            _writer.SaveList(_snippitList);
             _databaseWriter.WriteTo(_snippitList.LastOrDefault());
         }
 
@@ -74,7 +68,6 @@ namespace SnippitApp
 
         public void DeleteFromList(CodeSnippit snippit)
         {
-            //_snippitList.Remove(codesnippit);
             _databaseWriter.DeletePost(snippit);
         }
 

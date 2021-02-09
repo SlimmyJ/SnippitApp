@@ -15,7 +15,7 @@ namespace SnippitApp
             InitializeComponent();
             SnippitHandler = SnippitHandler.GetSnippitHandler();
             ListBoxOverView.ItemsSource = SnippitHandler.GetBindingSnippitList();
-            ListViewXaml.ItemsSource = SnippitHandler.GetBindingSnippitList();
+
             this.Resources["listingDataView"] = SnippitHandler.GetBindingSnippitList();
         }
 
@@ -47,6 +47,12 @@ namespace SnippitApp
             CodeSnippit snippit = SnippitHandler.GetSnippîtFromList(ListBoxOverView.SelectedIndex);
             snippit.author = "7/02/2021 21:13:55";
             SnippitHandler.UpdateSnippit(snippit);
+        }
+
+        private void OpenTestDesigner(object sender, RoutedEventArgs e)
+        {
+            Window designWindow = new Window1(this);
+            designWindow.Show();
         }
     }
 }
