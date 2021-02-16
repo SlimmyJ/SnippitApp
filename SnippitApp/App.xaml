@@ -9,5 +9,8 @@
         <Style TargetType="TextBlock" x:Key="Style2">
             <Setter Property="Background" Value="LightSkyBlue"/>
         </Style>
+        <Style TargetType="TextBlock" x:Key="Style3">
+            <Setter Property="Background" Value="LightCoral"/>
+        </Style>
     </Application.Resources>
 </Application>

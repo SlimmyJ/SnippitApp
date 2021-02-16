@@ -41,8 +41,7 @@ namespace SnippitApp
                 {
                     MainSnipWindow.Text = displaySnippit.SnipContent;
                 }
-            }    
-            
+            }        
         }        
 
         private void MenuItemNew_Click(object sender, RoutedEventArgs e)
@@ -75,20 +74,35 @@ namespace SnippitApp
             ListBoxOverView.Items.Clear();
             FillListBoxItems();
         }
-
-        private void btnTest_Click(object sender, RoutedEventArgs e)
+        
+        private void MenuItemStyle1_Click(object sender, RoutedEventArgs e)
         {
-            Style st = FindResource("Style1") as Style;
-            Style st2 = FindResource("Style2") as Style;
-            if (MainSnipWindow.Style == st2)
-            {
-                MainSnipWindow.Style = st;
-            }
-            else
-            {
-                MainSnipWindow.Style = st2;
-            }
-            
+            Style st1 = FindResource("Style1") as Style;
+            MainSnipWindow.Style = st1;
         }
+        private void MenuItemStyle2_Click(object sender, RoutedEventArgs e)
+        {
+            Style st2 = FindResource("Style2") as Style;
+            MainSnipWindow.Style = st2;
+        }
+        private void MenuItemStyle3_Click(object sender, RoutedEventArgs e)
+        {
+            Style st3 = FindResource("Style3") as Style;
+            MainSnipWindow.Style = st3;
+        }
+
+        //private void btnTest_Click(object sender, RoutedEventArgs e)
+        //{
+        //    Style st = FindResource("Style1") as Style;
+        //    Style st2 = FindResource("Style2") as Style;
+        //    if (MainSnipWindow.Style == st2)
+        //    {
+        //        MainSnipWindow.Style = st;
+        //    }
+        //    else
+        //    {
+        //        MainSnipWindow.Style = st2;
+        //    }            
+        //}
     }
 }

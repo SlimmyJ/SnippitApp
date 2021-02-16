@@ -46,10 +46,20 @@
                     <Separator />
                     <MenuItem Header="_Exit" />
                 </MenuItem>
+                <MenuItem Header="_Styles">
+                    <MenuItem Header="Style1"
+                              Click="MenuItemStyle1_Click"/>
+                    <MenuItem Header="Style2"
+                              Click="MenuItemStyle2_Click"/>
+                    <MenuItem Header="_Style3"
+                              Click="MenuItemStyle3_Click"/>
+                    <Separator />
+                    <MenuItem Header="_Exit" />
+                </MenuItem>
             </Menu>
         </DockPanel>
 
-        <Button x:Name="btnTest"
+        <!--<Button x:Name="btnTest"
                 Content="Change Style please"
                 Click="btnTest_Click"
                 Grid.Column="1"
@@ -58,7 +68,7 @@
                 Width="500"
                 VerticalAlignment="Center"
                 HorizontalAlignment="Center">
-        </Button>
+        </Button>-->
         <ListBox Grid.Row="2"
                  x:Name="ListBoxOverView"
                  Padding="10"
